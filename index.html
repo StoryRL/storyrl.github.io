@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Long-form Story Generation and Evaluation">
+  <meta property="og:title" content="Long-form Story Generation and Evaluation"/>
+  <meta property="og:description" content="Long-form Story Generation and Evaluation"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/images/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="Long-form Story Generation and Evaluation">
+  <meta name="twitter:description" content="Long-form Story Generation and Evaluation">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Story Generation, Story Evaluation, Re3, 𝙳𝙾𝙲, 𝙿𝚎𝚛𝚂𝙴">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Long-form Story Generation and Evaluation</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/meta.ico">
+
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Google+Sans|Castoro" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <link rel="stylesheet" href="/assets/dl.css">
+
+  <!-- Custom Fonts -->
+  <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet"> -->
+
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://𝙳𝙾𝙲umentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.1.1/dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Long-form Story Generation and Evaluation</h1>
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Kevin Yang, Hanlin Zhu, Danqing Wang, Justin Wong, Andrew Cohen, Xiaomeng Yang, Jiantao Jiao, Nanyun Peng, Dan Klein, Lei Li, Yuandong Tian,
+            </span>
+          </div> -->
+
+        <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://ai.meta.com" target="_blank">Meta AI (FAIR)</a>
+            </span>
+          </div>
+
+          <!--
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2305.13829" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+              <!-- Supplementary PDF link -->
+              <!-- <span class="link-block">
+                <a href="https://drive.google.com/file/d/1i9xfOkQ60kixj0rZ-kCo8UCo2fZ51fCY/view?usp=sharing" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-google-drive"></i>
+                </span>
+                <span>Dataset</span>
+                </a>
+              </span> -->
+
+              <!-- Github link -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/dqwang122/SALAM" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+              </span> -->
+
+              <!-- Slides -->
+              <!-- <span class="link-block">
+                <a href="/assets/PPT/20231027_EMNLP2023_SALAM.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-powerpoint"></i>
+                </span>
+                <span>Slides</span>
+                </a>
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <!-- <div class="item">
+        <div style="text-align: center;">
+          <img src="static/images/overview.jpg" width="80%" height="80%" alt="overview"/>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          SALAM. There are two agents in SALAM framework: an LLM and a study assistant. The blue contents are generated by LLM and the green ones are from the study assistant. The LLM has a first try on a set of queries and passes its response to the study assistant.
+          The assistant grades the response based on the ground truth and collect mistakes. It then returns feedback and asks LLM to refine its answer. For inference, the study assistant directly retrieves relevant mistakes for the new query and generates the analysis and guidelines as additional instruction for LLM.
+        </h2>
+      </div> -->
+      <div class="item">
+        <!-- Your image here -->
+        <div style="text-align: center;">
+          <img src="static/images/overview.jpg" width="70%" height="70%" alt="Overview"/>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          Overview for Long-form Story Generation and Evaluation. We first propose several story generation models for long-form story. We then develop story evaluator based on human feedback and align the story generation model with human feedback.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <div style="text-align: center;">
+          <img src="static/images/DOC.jpg" alt="𝙳𝙾𝙲"/>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          <strong>Re3</strong> (a) constructs a structured overarching plan; (b) generates story passages by repeatedly injecting contextual information from the plan and current story state; (c) reranks different continuations for plot coherence and premise relevance; (d) edits the best continuation for factual consistency. </br>
+          <strong>𝙳𝙾𝙲</strong> consists of two complementary components: a detailed outliner and a detailed controller. The detailed outliner creates a hierarchically structured outline and the detailed controller controls story passages to align with outline details.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <div style="text-align: center;">
+          <img src="static/images/PerSE.jpg" alt="𝙿𝚎𝚛𝚂𝙴"/>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          <strong>𝙿𝚎𝚛𝚂𝙴</strong>: a personalized story evaluation model to infer reviewer preferences and provide a personalized evaluation. Given a few exemplary reviews from a particular reviewer, it can predicts a detailed review or fine-grained comparison from several aspects.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <div style="text-align: center;">
+          <img src="static/images/e2e.jpeg" alt="end2end"/>
+        </div>
+        <h2 class="subtitle has-text-centered">
+          E2Eplot makes story generation faster and cheaper and is end-to-end fine-tunable with human feedback. Here are two plots generated by OpenPlot (LLaMA-2-based 𝙳𝙾𝙲) and E2E Plot.
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        Your video here
+        <source src="static/videos/demo.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        description
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="column has-text-centered">
+          <h2 class="title is-2">𝙳𝙾𝙲: Improving Long Story Coherence with Detailed Outline Control</h2>
+          <div class="is-size-5 publication-authors has-text-centered">
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~yangk/" target="_blank">Kevin Yang</a>,
+            </span>
+            <span class="author-block">
+              <a href="http://people.eecs.berkeley.edu/~klein/" target="_blank">Dan Klein</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://vnpeng.net" target="_blank">Nanyun Peng</a><sup>†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://yuandong-tian.com" target="_blank">Yuandong Tian</a><sup>††</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors has-text-centered">
+            <span class="author-block">UC Berkeley, †UCLA, ††Meta AI </br>
+              ACL 2023
+            </span>
+          </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2212.10077.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+              <a href="https://github.com/facebookresearch/doc-storygen-v2" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+              </a>
+            </span>
+          </div>
+
+
+        <div class="column has-text-justified">
+          <p>
+            We propose the Detailed Outline Control (𝙳𝙾𝙲) framework for improving long-range plot coherence when automatically generating several-thousand-word-long stories. 𝙳𝙾𝙲 consists of two complementary components: a detailed outliner and a detailed controller. The detailed outliner creates a more detailed, hierarchically structured outline, shifting creative burden from the main drafting procedure to the planning stage. The detailed controller ensures the more detailed outline is still respected during generation by controlling story passages to align with outline details. In human evaluations of automatically generated stories, 𝙳𝙾𝙲 substantially outperforms a strong Re3 baseline (Yang et al., 2022) on plot coherence (22.5% absolute gain), outline relevance (28.2%), and interestingness (20.7%). Humans also judged 𝙳𝙾𝙲 to be much more controllable in an interactive generation setting.
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Paper content -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <div class="content has-text-justified">
+        <h3 class="title is-4">Main idea</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper content -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{yang-etal-2023-𝙳𝙾𝙲,
+    title = "DOC: Improving Long Story Coherence With Detailed Outline Control",
+    author = "Yang, Kevin  and
+      Klein, Dan  and
+      Peng, Nanyun  and
+      Tian, Yuandong",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-long.190",
+    doi = "10.18653/v1/2023.acl-long.190",
+    pages = "3378--3465",
+}
+  </code></pre>
+</div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">Learning Personalized Story Evaluation</h2>
+        <!-- Danqing Wang, Kevin Yang, Hanlin Zhu, Xiaomeng Yang, Andrew Cohen, Lei Li, Yuandong Tian -->
+        <div class="is-size-5 publication-authors has-text-centered">
+          <span class="author-block">
+            <a href="https://dqwang122.github.io/" target="_blank">Danqing Wang</a><sup>1,2</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://people.eecs.berkeley.edu/~yangk/" target="_blank">Kevin Yang</a><sup>2,3</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://hanlinzhu.com" target="_blank">Hanlin Zhu</a><sup>2,3</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://www.linkedin.com/in/xiaomeng-yang-356a976b/" target="_blank">Xiaomeng Yang</a><sup>2</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://www.linkedin.com/in/andrew-cohen-17a7aa15b/" target="_blank">Andrew Cohen</a><sup>2</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://lileicc.github.io/" target="_blank">Lei Li</a><sup>4</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://yuandong-tian.com" target="_blank">Yuandong Tian</a><sup>2</sup>
+          </span>
+        </div>
+
+        <div class="is-size-5 publication-authors has-text-centered">
+          <span class="author-block"><sup>1</sup>UC Santa Barbara, <sup>2</sup>Meta AI, <sup>3</sup>UC Berkeley, <sup>4</sup>CMU
+          </span>
+        </div>
+
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://arxiv.org/pdf/2310.03304.pdf" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="https://github.com/facebookresearch/doc-storygen-v2" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>Code</span>
+            </a>
+          </span>
+        </div>
+
+        <div class="column has-text-justified">
+          <p>
+            While large language models (LLMs) have shown impressive results for more objective tasks such as QA and retrieval, it remains nontrivial to evaluate their performance on open-ended text generation for reasons including (1) data contamination; (2) multi-dimensional evaluation criteria; and (3) subjectiveness stemming from reviewers' personal preferences. To address such issues, we propose to model personalization in an uncontaminated open-ended generation assessment. We create two new datasets 𝙿𝚎𝚛-𝙼𝙿𝚂𝚃 and 𝙿𝚎𝚛-𝙳𝙾𝙲 for personalized story evaluation, by re-purposing existing datasets with proper anonymization and new personalized labels. We further develop a personalized story evaluation model 𝙿𝚎𝚛𝚂𝙴 to infer reviewer preferences and provide a personalized evaluation. Specifically, given a few exemplary reviews from a particular reviewer, 𝙿𝚎𝚛𝚂𝙴 predicts either a detailed review or fine-grained comparison in several aspects (such as interestingness and surprise) for that reviewer on a new text input. Experimental results show that 𝙿𝚎𝚛𝚂𝙴 outperforms GPT-4 by 15.8% on Kendall correlation of story ratings, and by 13.7% on pairwise preference prediction accuracy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Paper content -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <div class="content has-text-justified">
+        <h3 class="title is-4">Main idea</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper content -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{wang2023learning,
+    title={Learning Personalized Story Evaluation},
+    author={Wang, Danqing and Yang, Kevin and Zhu, Hanlin and Yang, Xiaomeng and Cohen, Andrew and Li, Lei and Tian, Yuandong},
+    journal={arXiv preprint arXiv:2310.03304},
+    year={2023}
+}
+  </code></pre>
+</div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-2">End-to-end Story Plot Generator</h2>
+        <!-- Hanlin Zhu, Andrew Cohen, Danqing Wang, Kevin Yang, Xiaomeng Yang, Jiantao Jiao, Yuandong Tian -->
+        <div class="is-size-5 publication-authors has-text-centered">
+          <span class="author-block">
+            <a href="https://hanlinzhu.com" target="_blank">Hanlin Zhu</a><sup>1,2*</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://www.linkedin.com/in/andrew-cohen-17a7aa15b/" target="_blank">Andrew Cohen</a><sup>2*</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://dqwang122.github.io/" target="_blank">Danqing Wang</a><sup>2,3</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://people.eecs.berkeley.edu/~yangk/" target="_blank">Kevin Yang</a><sup>1,2</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://www.linkedin.com/in/xiaomeng-yang-356a976b/" target="_blank">Xiaomeng Yang</a><sup>2</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://people.eecs.berkeley.edu/~jiantao/" target="_blank">Jiantao Jiao</a><sup>1</sup>,
+          </span>
+          <span class="author-block">
+            <a href="https://yuandong-tian.com" target="_blank">Yuandong Tian</a><sup>2</sup>
+          </span>
+        </div>
+
+        <div class="is-size-5 publication-authors has-text-centered">
+          <span class="author-block"><sup>1</sup>UC Berkeley, <sup>2</sup>Meta AI, <sup>3</sup>UC Santa Barbara
+          </span>
+          <span class="eql-cntrb"><small><br><sup>*</sup>Equal contributions</small></span>
+        </div>
+
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://arxiv.org/pdf/2310.08796.pdf" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="https://arxiv.org/pdf/2310.08796.pdf" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>Code</span>
+            </a>
+          </span>
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Story plots, while short, carry most of the essential information of a full story that may contain tens of thousands of words. We study the problem of automatic generation of story plots, which includes story premise, character descriptions, plot outlines, etc. To generate a single engaging plot, existing plot generators (e.g., 𝙳𝙾𝙲 (Yang et al., 2022a)) require hundreds to thousands of calls to LLMs (e.g., OpenAI API) in the planning stage of the story plot, which is costly and takes at least several minutes. Moreover, the hard-wired nature of the method makes the pipeline non-differentiable, blocking fast specialization and personalization of the plot generator. In this paper, we propose three models, 𝙾𝚙𝚎𝚗𝙿𝚕𝚘𝚝, 𝙴𝟸𝙴𝙿𝚕𝚘𝚝 and 𝚁𝙻𝙿𝚕𝚘𝚝, to address these challenges. 𝙾𝚙𝚎𝚗𝙿𝚕𝚘𝚝 replaces expensive OpenAI API calls with LLaMA2 (Touvron et al., 2023) calls via careful prompt designs, which leads to inexpensive generation of high-quality training datasets of story plots. We then train an end-to-end story plot generator, 𝙴𝟸𝙴𝙿𝚕𝚘𝚝, by supervised fine-tuning (SFT) using approximately 13000 story plots generated by 𝙾𝚙𝚎𝚗𝙿𝚕𝚘𝚝. 𝙴𝟸𝙴𝙿𝚕𝚘𝚝 generates story plots of comparable quality to 𝙾𝚙𝚎𝚗𝙿𝚕𝚘𝚝, and is > 10× faster (1k tokens in only 30 seconds on average). Finally, we obtain 𝚁𝙻𝙿𝚕𝚘𝚝 that is further fine-tuned with RLHF on several different reward models for different aspects of story quality, which yields 60.0% winning rate against 𝙴𝟸𝙴𝙿𝚕𝚘𝚝 along the aspect of suspense and surprise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Paper content -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-five-fifths">
+        <div class="content has-text-justified">
+        <h3 class="title is-4">Main idea</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper content -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{zhu2023end,
+  title={End-to-end Story Plot Generator},
+  author={Zhu, Hanlin and Cohen, Andrew and Wang, Danqing and Yang, Kevin and Yang, Xiaomeng and Jiao, Jiantao and Tian, Yuandong},
+  journal={arXiv preprint arXiv:2310.08796},
+  year={2023}
+}
+  </code></pre>
+</div>
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
